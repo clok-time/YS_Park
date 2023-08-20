@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/*login.css*/
+#loginTbl {
+	width: 250px;
+	margin: 50px auto;
+	background-color: white;
+	border-radius: 10px;
+	position: absolute;
+	z-index: 1;
+	right:17px; 
+}
+
+#loginTbl td {
+	padding: 10px;
+	font-size: 13pt;
+	font-weight: 800;
+}
+
+#loginTbl input {
+	width: 96%;
+	padding: 5px;
+	border: none;
+	background-color: black;
+	border-radius: 5px;
+	color: white;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: #000;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#loginTbl button:hover {
+	background-color: #333;
+}
+
+#loginTbl button:focus {
+	outline: none;
+}
+
+#loginTbl #joinBtn {
+	margin-top: 10px;
+}
+
+#loginMemberImg {
+	width: 200px;
+	right: 10px;
+	top: 30px;
+	border-radius: 10px;
+}
+
+#loginMemberID {
+	margin-top: 30px;
+	font-size: 20pt;
+	align: center;
+	color: white;
+}
+
+#loginSuccessTbl {
+	border-color: white;
+	border-radius: 10px;
+	width: 200px;
+	background-color: #B2EBF4;
+	position: absolute;
+	z-index: 1;
+	right: 0px;
+}

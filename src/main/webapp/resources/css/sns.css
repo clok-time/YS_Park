@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/*sns.css*/
+@font-face{
+font-family: 'd2';
+src: url(../D2Coding.ttf);
+	
+}
+@font-face{
+	font-family: 'f';
+	src: url(../font.ttf);
+	
+}
+#snsL{
+	left:10px;
+	font-size:100px;
+	color: blue;
+	position:fixed; 
+	z-index: 3;
+	
+}
+
+#snsR{
+	right: 10px;
+	font-size:100px;
+	color: blue;
+	position:fixed; 
+	z-index: 3;
+}
+#snsWriteArea{
+	height: 150px;
+	left:-375px;
+	position:fixed; 
+	transition:all 0.7s ease-out;
+	background-color: white;
+	border-bottom-right-radius:10px; 
+	position: fixed;
+	z-index: 2;
+}
+#snsWriteArea input{
+	background-color: transparent;
+	border:none;
+	
+}
+#snsWriteArea #sstTd1{
+	background-color: black;
+}
+#snsWriteArea td{
+	border-radius: 20px;
+}
+#snsWriteArea textarea{
+	color: white;
+	font-size: 12pt;
+	font-weight: 900;
+	font-family: 'f';
+}
+#snsWriteAreaSummoner{
+	transition:all 0.7s ease-out;
+	position:fixed;
+}
+#swtTd1{
+	background-color: black;
+	width: 90%;
+}
+.sm{
+	z-index:2;
+	background-color: #F0E8DD;
+	opacity:0.85;
+	border-radius: 5px;
+}
+.smPhoto{
+	width:190px;
+}
+.smOwner{
+	font-size: 15pt;
+	font-weight: 700;
+}
+.smReplyID{
+	font-size: 13pt;
+	font-weight: 600;
+	
+}
+.smTxt textarea{
+	
+	font-size: 16px;
+	
+}
+#smReplyArea input{
+	width:65%;
+	font-size: 14pt;
+}

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*join.css*/
+.joinTd {
+	font-family: 'd2';
+	border-radius: 10px;
+	background-color: white;
+	font-weight: 700;
+	width: 300px;
+}
+#joinTbl th{
+	font-family: 'd2';
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+}
+#joinTbl input{
+	font-family: 'd2';
+	width: 100%;
+	
+}

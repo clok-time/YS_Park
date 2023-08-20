@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*movie.css*/
+#h1Tag{
+	color: white;
+	background-color: #B5B2FF;
+	border-radius: 20px;
+	width:30%;
+}
+
+#rankTbl{
+	background-color: gray;
+	float: inherit;
+	color:#F0E8DD;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: 800;
+	text-align: center;
+	padding:10px;
+	width:75%;
+	padding-bottom: 10px;
+}
+#rankTbl td{
+	color:#F0E8DD;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: 600;
+	text-align: center;
+}
+#mBody{
+	width: 57%;
+	background-color: #F0E8DD;
+	height:inherit;
+	padding-top: 10px;
+	opacity: 0.95;
+	border-radius: 80px;
+	padding-bottom: 30px;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.project2.Member.MemberMapper">
+<select id="getMemberById" resultType="com.park.project2.Member.Member" parameterType="com.park.project2.Member.Member">
+select * from park_member where p_id = #{p_id}
+</select>
+<insert id="join" parameterType="com.park.project2.Member.Member">
+insert into park_member values(#{p_id}, #{p_pw}, #{p_name}, #{p_addr}, #{p_photo}, #{p_role})
+</insert>
+<update id="update" parameterType="com.park.project2.Member.Member">
+		update park_member set p_pw = #{p_pw}, p_name = #{p_name}, p_addr = #{p_addr}, p_photo = #{p_photo}
+		where p_id=#{p_id}
+	</update>
+	<delete id="signOut" parameterType="com.park.project2.Member.Member">
+		delete from park_member where p_id = #{p_id}	
+	</delete>
+</mapper>

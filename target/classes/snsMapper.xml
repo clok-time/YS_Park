@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.park.project2.sns.SNSMapper">
+	<select id="getAllMsg" resultType="com.park.project2.sns.SNSMsg">
+		select * from park_sns order
+		by p_when
+	</select>
+	<select id="getAllMsgCount" resultType="java.lang.Integer">
+		select count(*) from
+		park_member, park_sns where p_id = p_owner
+	</select>
+	<select id="getSearchMsgCount" resultType="java.lang.Integer"
+		parameterType="com.park.project2.sns.SNSSelector">
+		select count(*) from park_member, park_sns 
+		where p_id = p_owner 
+		and (p_txt like '%'||#{search}||'%' or p_id = '%'||#{search}||'%')
+	</select>
+	<select id="getMsg" resultType="com.park.project2.sns.SNSMsg"
+		parameterType="com.park.project2.sns.SNSSelector">
+		select * from ( select rownum as rn, p_photo, p_owner, p_txt, p_when, p_color, p_no
+		from( select*from park_member, park_sns 
+		where p_id=p_owner 
+		and(p_txt like '%'||#{search}||'%' or p_id like '%'||#{search}||'%')
+		order by p_when desc)) 
+		where rn &gt; = #{start} and rn &lt; = #{end}
+	</select>
+	<insert id="writeMsg"
+		parameterType="com.park.project2.sns.SNSMsg">
+		insert into park_sns values(park_sns_seq.nextval,
+		#{p_owner}, sysdate, #{p_txt} , #{p_color})
+	</insert>
+	<insert id="writeReply"
+		parameterType="com.park.project2.sns.SNSReply">
+		insert into park_sns_reply
+		values(park_sns_reply_seq.nextval, #{pr_p_no}, #{pr_owner}, #{pr_txt}, sysdate)
+	</insert>
+	<update id="updateMsg"
+		parameterType="com.park.project2.sns.SNSMsg">
+		update park_sns set p_txt = #{p_txt} where p_no =
+		#{p_no}
+	</update>
+	<delete id="deleteMsg"
+		parameterType="com.park.project2.sns.SNSMsg">
+		delete from park_sns
+		where p_no = #{p_no}
+	</delete>
+	<delete id="deleteReply"
+		parameterType="com.park.project2.sns.SNSReply">
+		delete from park_sns_reply
+		where pr_no = #{pr_no}
+	</delete>
+	<select id="getReply"
+		parameterType="com.park.project2.sns.SNSMsg"
+		resultType="com.park.project2.sns.SNSReply">
+		select *
+		from park_sns_reply
+		where pr_p_no = #{p_no}
+		order by pr_when
+	</select>
+</mapper>
